@@ -2,6 +2,7 @@ package com.example.schooliapi.service;
 
 import com.example.schooliapi.entity.Marks;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.example.schooliapi.Constants;
 

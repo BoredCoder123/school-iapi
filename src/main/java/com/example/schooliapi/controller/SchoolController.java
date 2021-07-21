@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -27,5 +29,12 @@ public class SchoolController {
     @GetMapping("/studentRequestRecheck/{studentId}/{subjectId}")
     public String studentRequestRecheck(@PathVariable int studentId, @PathVariable int subjectId){
         return schoolService.studentRequestRecheck(studentId, subjectId);
+    }
+
+    @GetMapping("/")
+    public String checkHeartBeat(){
+        Date date= new Date();
+        String res="School-IAPI is working. "+(new Timestamp(date.getTime()));
+        return res;
     }
 }
